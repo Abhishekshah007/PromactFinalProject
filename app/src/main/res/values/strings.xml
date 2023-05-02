@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Promact Final Assessment Project</string>
+    <string name="name_label">Enter Your Name</string>
+    <string name="username_label">Enter UserName Name</string>
+    <string name="label_mail">Enter Your Mail ID</string>
+    <string name="label_phone">Enter Phone Number</string>
+    <string name="label_web_url">Enter Your Website URL</string>
+    <string name="label_address">Address:</string>
+    <string name="label_street_name">Street Name</string>
+    <string name="label_suite_name">Suite Name</string>
+    <string name="label_company">Company:</string>
+    <string name="label_btn_upload">Upload</string>
+    <string name="label_enter_bs">Enter BS</string>
+</resources>

@@ -1,0 +1,201 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:padding="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/user_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="user list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:drawableStart="@android:drawable/ic_menu_myplaces"
+                android:hint="@string/name_label"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_list" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:drawableStart="@android:drawable/ic_menu_my_calendar"
+                android:hint="@string/username_label"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:hint="@string/label_mail"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@android:drawable/sym_action_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+            <EditText
+                android:id="@+id/label_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="phone"
+                android:drawableStart="@android:drawable/stat_sys_speakerphone"
+                android:hint="@string/label_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/label_web_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:hint="@string/label_web_url"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_phone"
+                android:autofillHints="url"
+                android:inputType="textUri" />
+
+            <TextView
+                android:id="@+id/label_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/label_address"
+                android:textFontWeight="800"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_web_url" />
+
+
+            <EditText
+                android:id="@+id/label_street_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_street_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_address"
+                android:autofillHints="street"
+                android:inputType="textPostalAddress" />
+
+            <EditText
+                android:id="@+id/label_suite_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_suite_name"
+                android:inputType="textAutoComplete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_street_name"
+                app:layout_constraintTop_toBottomOf="@+id/label_address"
+                android:autofillHints="street" />
+
+            <EditText
+                android:id="@+id/label_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="City Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_street_name" />
+
+
+            <EditText
+                android:id="@+id/label_zipcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Zipcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_city_name"
+                app:layout_constraintTop_toBottomOf="@+id/label_suite_name" />
+
+
+            <TextView
+                android:id="@+id/label_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/label_company"
+                android:textFontWeight="800"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_city_name"
+                />
+
+            <EditText
+                android:id="@+id/label_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Company Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_company"
+                android:autofillHints="company" />
+
+            <EditText
+                android:id="@+id/label_catch_phrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Catch Phrase"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_company_name"
+                app:layout_constraintTop_toBottomOf="@+id/label_company"
+                android:autofillHints="phrase"
+                android:inputType="textPostalAddress" />
+
+            <EditText
+                android:id="@+id/label_bs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_enter_bs"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_company_name" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/post_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_btn_upload"
+                android:textSize="22sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_bs" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
