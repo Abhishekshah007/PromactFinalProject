@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         post_btn = findViewById(R.id.post_btn);
         user_list = findViewById(R.id.user_list);
 
-        user_list.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ShowUsers.class);
-            startActivity(intent);
-        });
+//        user_list.setOnClickListener(view -> {
+//            Intent intent = new Intent(MainActivity.this, ShowUsers.class);
+//            startActivity(intent);
+//        });
 
 
         // Set an onClickListener to the button
@@ -79,8 +79,10 @@ public class MainActivity extends AppCompatActivity {
             String bsText = bs.getText().toString();
 
             // Create a JSONObject with the values of the EditText fields
+            // Create a JSONObject with the values of the EditText fields
             JSONObject postData = new JSONObject();
             try {
+                postData.put("id",1);
                 postData.put("name", name);
                 postData.put("username", userName);
                 postData.put("email", email);
@@ -90,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 addressData.put("suite", suiteName);
                 addressData.put("city", cityName);
                 addressData.put("zipcode", zipcode);
+
+                JSONObject geoData = new JSONObject();
+                geoData.put("lat", "-14.3990");
+                geoData.put("lng", "-120.7677");
+
+                addressData.put("geo", geoData);
 
                 postData.put("address", addressData);
 
@@ -105,16 +113,20 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             // Create a JsonObjectRequest with the POST method and the postData
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "https://jsonplaceholder.typicode.com/users", postData,
                     response -> {
                         Log.d("Response", response.toString());
+                        // Start a new activity to display the response data
+                        Intent intent = new Intent(MainActivity.this, ShowUsers.class);
+                        intent.putExtra("response_data", response.toString());
+                        startActivity(intent);
                         Toast.makeText(MainActivity.this, "Data uploaded successfully", Toast.LENGTH_SHORT).show();
                     }, error -> {
                 Log.e("Error", error.toString());
                 Toast.makeText(MainActivity.this, "Error uploading data", Toast.LENGTH_SHORT).show();
             });
+
             Volley.newRequestQueue(MainActivity.this).add(jsonObjectRequest);
         });
 
